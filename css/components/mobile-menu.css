@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* Transition lors du chargement du menu à ajouter */
+.mobile-menu {
+  margin: 40px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  position: fixed;
+  width: calc(100vw - 80px);
+  top: 0;
+}
+.mobile-menu .menu-icon {
+  font-size: 22px;
+  color: #3a4f66;
+}
+.mobile-menu > nav {
+  text-align: right;
+}
+.mobile-menu .close-icon {
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+.mobile-menu .menu-icon:hover,
+.mobile-menu .close-icon {
+  cursor: pointer;
+}
+.mobile-menu .liens {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.mobile-menu .liens a, .mobile-menu .liens > i {
+  color: white;
+  margin: 12px;
+}
+.mobile-menu nav a:hover,
+.mobile-menu .close-icon:hover {
+  color: #1559ed;
+}
+.mobile-menu .active {
+  color: #1559ed;
+}
+
+.mobile-menu > nav {
+  text-align: end;
+}
+
+@media screen and (min-width: 1000px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=mobile-menu.css.map */

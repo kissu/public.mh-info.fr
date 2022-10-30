@@ -1,0 +1,73 @@
+@import "../variables.scss";
+
+/* Transition lors du chargement du menu à ajouter */
+
+.mobile-menu {
+  margin: 40px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  position: fixed;
+  width: calc(100vw - 80px);
+  top: 0;
+
+  .menu-icon {
+    font-size: 22px;
+    color: $color-light;
+  }
+
+  & > nav {
+    text-align: right;
+  }
+
+  .close-icon {
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+
+  .menu-icon:hover,
+  .close-icon {
+    cursor: pointer;
+  }
+
+  .liens {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    a,
+    & > i {
+      color: white;
+      margin: 12px;
+    }
+  }
+
+  nav a:hover,
+  .close-icon:hover {
+    color: $color-hover;
+  }
+
+  .active {
+    color: $color-hover;
+  }
+}
+
+.mobile-menu > nav {
+  text-align: end;
+}
+
+@media screen and (min-width: 1000px) {
+  .mobile-menu {
+    display: none;
+  }
+}

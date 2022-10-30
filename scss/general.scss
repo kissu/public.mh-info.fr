@@ -1,0 +1,224 @@
+/* import */
+@import "./components/desktop-menu.css";
+@import "./components/mobile-menu.css";
+@import "./variables.scss";
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Nunito+Sans:wght@300;400;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap);
+
+/* reset */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  &::selection {
+    background: $background-selection;
+  }
+}
+
+body {
+  background: $background-primary;
+  margin: 0;
+}
+
+.disable-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1,
+h2 {
+  font-family: $font-primary;
+  font-style: italic;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 7vw;
+  color: $color-primary;
+  text-align: center;
+  margin-top: 180px;
+}
+
+h2 {
+  font-size: 2.5vw;
+  margin-bottom: 9px;
+}
+
+h3 {
+  font-family: $font-article;
+}
+
+p,
+button,
+input,
+textarea {
+  font-family: $font-secondary;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+a {
+  color: $color-dark;
+  text-decoration: none;
+}
+
+.read {
+  font-family: $font-primary;
+  font-style: italic;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  border: 2px solid black;
+  background: $background-primary;
+  transition: 0.5s background ease;
+  font-weight: 600;
+  &:hover {
+    background: $background-black;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+footer {
+  font-family: $font-secondary;
+  color: $color-light;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  background: $background-secondary;
+  padding: 15px;
+
+  p.copyright {
+    margin: 0;
+    margin-top: 13px;
+  }
+
+  p.attribution-link {
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: $color-light;
+  }
+
+  img {
+    width: 100px;
+    margin: auto;
+  }
+
+  .black-butter-logo {
+    display: none;
+  }
+}
+
+/* Medias queries */
+@media screen and (max-width: 1000px) {
+  h1 {
+    margin-top: 107px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  h1 {
+    font-size: 13vw !important;
+  }
+
+  h2 {
+    font-size: 5.5vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: 7vw;
+  }
+}
+
+// Dark mode
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #222;
+
+    footer {
+      background: #333;
+
+      p,
+      p.attribution-link {
+        color: white;
+      }
+
+      .white-butter-logo {
+        display: none;
+      }
+
+      .black-butter-logo {
+        display: block;
+      }
+    }
+
+    h1 {
+      color: white;
+    }
+
+    .mode {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.dark {
+  background: #222;
+
+  footer {
+    background: #333;
+
+    p,
+    p.attribution-link {
+      color: white;
+    }
+
+    .white-butter-logo {
+      display: none;
+    }
+
+    .black-butter-logo {
+      display: block;
+    }
+  }
+
+  h1 {
+    color: white;
+  }
+}
+
+.light {
+  background: $background-primary;
+
+  footer {
+    background: $background-secondary;
+
+    p,
+    p.attribution-link {
+      color: $color-light;
+    }
+
+    .white-butter-logo {
+      display: block;
+    }
+
+    .black-butter-logo {
+      display: none;
+    }
+  }
+
+  h1 {
+    color: $color-primary;
+  }
+}

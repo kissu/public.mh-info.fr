@@ -1,0 +1,11 @@
+html body .root-container-archives {
+  filter: grayscale(1);
+}
+html body .root-container-archives h1,
+html body .root-container-archives h2,
+html body .root-container-archives span,
+html body .root-container-archives p {
+  color: gray;
+}
+
+/*# sourceMappingURL=archives.css.map */

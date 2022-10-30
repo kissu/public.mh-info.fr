@@ -1,0 +1,101 @@
+.desktop-menu {
+  background: white;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 10.7px;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 2s height ease;
+  z-index: 3;
+  height: 118px;
+}
+.desktop-menu nav {
+  display: flex;
+  width: max-content;
+  margin: auto;
+}
+.desktop-menu nav a,
+.desktop-menu nav div, .desktop-menu nav > i {
+  display: block;
+  padding: 51px 12px;
+  text-align: center;
+  color: #3a4f66;
+  transition: 70ms border ease;
+  transition: 2s padding ease;
+  height: fit-content;
+}
+.desktop-menu nav > i {
+  font-size: 20px;
+  padding: 48px 12px;
+}
+.desktop-menu nav a:hover,
+.desktop-menu nav div:hover,
+.desktop-menu nav i:hover {
+  color: #1559ed !important;
+}
+.desktop-menu nav div {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+.desktop-menu nav div a {
+  padding: 0;
+}
+.desktop-menu nav div i {
+  margin-left: 10px;
+}
+.desktop-menu .inactive {
+  border-bottom: 2px solid white;
+}
+.desktop-menu a:hover {
+  border-bottom: 2px solid #1559ed !important;
+}
+.desktop-menu #active {
+  border-bottom: 2px solid #1559ed;
+}
+
+@media screen and (max-width: 1000px) {
+  .root-container-menuFR .desktop-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 520px) {
+  .root-container-menuEN .desktop-menu {
+    display: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body .desktop-menu {
+    background: #333;
+  }
+  body .desktop-menu nav > a, body .desktop-menu nav > i {
+    color: white;
+  }
+  body .desktop-menu .inactive {
+    border-bottom: 2px solid #333;
+  }
+}
+.dark .desktop-menu {
+  background: #333;
+}
+.dark .desktop-menu nav > a, .dark .desktop-menu nav > i {
+  color: white;
+}
+.dark .desktop-menu .inactive {
+  border-bottom: 2px solid #333;
+}
+
+.light .desktop-menu {
+  background: white;
+}
+.light .desktop-menu nav > a, .light .desktop-menu nav > i {
+  color: #3a4f66;
+}
+.light .desktop-menu .inactive {
+  border-bottom: 2px solid white;
+}
+
+/*# sourceMappingURL=desktop-menu.css.map */

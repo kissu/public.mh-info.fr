@@ -1,0 +1,140 @@
+.recent-article-feed {
+  display: flex;
+  justify-content: space-between;
+  width: 93%;
+  margin: 60px auto;
+
+  .article {
+    height: 25vw;
+    margin: 25px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+  }
+
+  .dark-window {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+  }
+
+  .title {
+    margin-top: 0;
+    margin-bottom: 3px;
+  }
+
+  .text-box {
+    padding: 3.5% 15px;
+    color: white;
+
+    .author,
+    .date {
+      font-family: "Nunito Sans";
+      font-weight: 300;
+      font-size: 13px;
+      display: inline-block;
+    }
+  }
+
+  & > div {
+    flex: 1;
+  }
+
+  .description {
+    text-align: justify;
+    font-family: "Cormorant Garamond";
+    font-style: italic;
+  }
+
+  .read {
+    font-family: "Cormorant Garamond";
+    font-style: italic;
+  }
+}
+
+/* Medias queries */
+@media screen and (max-width: 1055px) {
+  .recent-article-feed {
+    flex-direction: column;
+
+    .description {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .recent-article-feed .description {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 326px) {
+  .dot {
+    opacity: 0;
+  }
+
+  .text-box {
+    .author,
+    .date {
+      margin: 5px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .dot {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 871px) and (max-width: 1055px) {
+  .recent-article-feed .article {
+    height: 25vw;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 870px) {
+  .recent-article-feed .article {
+    height: 35vw;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 750px) {
+  .recent-article-feed .article {
+    height: 40vw;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 600px) {
+  .recent-article-feed .article {
+    height: 50vw;
+  }
+}
+
+@media screen and (min-width: 416px) and (max-width: 450px) {
+  .recent-article-feed .article {
+    height: 60vw;
+  }
+}
+
+@media screen and (min-width: 361px) and (max-width: 415px) {
+  .recent-article-feed .article {
+    height: 70vw;
+  }
+}
+
+@media screen and (min-width: 346px) and (max-width: 360px) {
+  .recent-article-feed .article {
+    height: 80vw;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .recent-article-feed .article {
+    height: 115vw;
+  }
+}

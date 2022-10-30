@@ -1,0 +1,116 @@
+.card a {
+  display: flex;
+  margin: 50px auto;
+  box-shadow: -3px 3px 5px #c5c5c5;
+  border-radius: 7px;
+  width: 80vw;
+  background: white;
+
+  .text-box {
+    margin: 3.5% 30px 3.5% 15px;
+    width: 60%;
+
+    .author,
+    .date {
+      font-family: "Nunito Sans";
+      font-weight: 300;
+      font-size: 13px;
+      display: inline-block;
+    }
+  }
+
+  .img {
+    width: 40%;
+    height: 250px;
+    border-radius: 7px;
+    margin: 30px;
+    background-size: cover;
+    background-position: center;
+    background-color: gray;
+  }
+
+  .description {
+    text-align: justify;
+    font-family: "Cormorant Garamond";
+    font-style: italic;
+  }
+}
+
+.articles .card > * {
+  margin: 30px;
+}
+
+.articles h2 {
+  font-size: 2.8vw;
+}
+
+/* Effects */
+.card:hover {
+  transform: translate(10px, -10px);
+}
+
+.card {
+  transition: 500ms ease;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 700px) {
+  .card a {
+    flex-direction: column;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .img {
+      width: calc(80vw - 60px);
+      margin-bottom: 10px;
+    }
+
+    .text-box {
+      margin: 3.5% 30px;
+      width: calc(80vw - 60px);
+    }
+  }
+}
+
+@media screen and (max-width: 344px) {
+  .dot {
+    opacity: 0;
+  }
+
+  .text-box {
+    .author,
+    .date {
+      margin: 5px 0;
+    }
+  }
+}
+
+// Dark mode
+@media (prefers-color-scheme: dark) {
+  body {
+    .card a {
+      background: #222;
+      box-shadow: -3px 3px 5px #555;
+      color: white;
+    }
+  }
+}
+
+.dark {
+  .card a {
+    background: #222;
+    box-shadow: -3px 3px 5px #555;
+    color: white;
+  }
+}
+
+.light {
+  .card a {
+    background: white;
+    box-shadow: -3px 3px 5px #c5c5c5;
+    color: initial;
+  }
+}

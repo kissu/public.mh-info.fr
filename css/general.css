@@ -1,0 +1,197 @@
+/* import */
+@import "./components/desktop-menu.css";
+@import "./components/mobile-menu.css";
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Nunito+Sans:wght@300;400;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap);
+/* reset */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*::selection {
+  background: #5c93f7;
+}
+
+body {
+  background: #fafbfc;
+  margin: 0;
+}
+
+.disable-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1,
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 7vw;
+  color: #192a3d;
+  text-align: center;
+  margin-top: 180px;
+}
+
+h2 {
+  font-size: 2.5vw;
+  margin-bottom: 9px;
+}
+
+h3 {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+p,
+button,
+input,
+textarea {
+  font-family: "Montserrat", sans-serif;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.read {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  border: 2px solid black;
+  background: #fafbfc;
+  transition: 0.5s background ease;
+  font-weight: 600;
+}
+button:hover {
+  background: #111;
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  font-family: "Montserrat", sans-serif;
+  color: #3a4f66;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  background: #f2f5f7;
+  padding: 15px;
+}
+footer p.copyright {
+  margin: 0;
+  margin-top: 13px;
+}
+footer p.attribution-link {
+  font-size: 10px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  color: #3a4f66;
+}
+footer img {
+  width: 100px;
+  margin: auto;
+}
+footer .black-butter-logo {
+  display: none;
+}
+
+/* Medias queries */
+@media screen and (max-width: 1000px) {
+  h1 {
+    margin-top: 107px;
+  }
+}
+@media screen and (max-width: 750px) {
+  h1 {
+    font-size: 13vw !important;
+  }
+  h2 {
+    font-size: 5.5vw;
+  }
+}
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: 7vw;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #222;
+  }
+  body footer {
+    background: #333;
+  }
+  body footer p,
+body footer p.attribution-link {
+    color: white;
+  }
+  body footer .white-butter-logo {
+    display: none;
+  }
+  body footer .black-butter-logo {
+    display: block;
+  }
+  body h1 {
+    color: white;
+  }
+  body .mode {
+    transform: rotate(180deg);
+  }
+}
+.dark {
+  background: #222;
+}
+.dark footer {
+  background: #333;
+}
+.dark footer p,
+.dark footer p.attribution-link {
+  color: white;
+}
+.dark footer .white-butter-logo {
+  display: none;
+}
+.dark footer .black-butter-logo {
+  display: block;
+}
+.dark h1 {
+  color: white;
+}
+
+.light {
+  background: #fafbfc;
+}
+.light footer {
+  background: #f2f5f7;
+}
+.light footer p,
+.light footer p.attribution-link {
+  color: #3a4f66;
+}
+.light footer .white-butter-logo {
+  display: block;
+}
+.light footer .black-butter-logo {
+  display: none;
+}
+.light h1 {
+  color: #192a3d;
+}
+
+/*# sourceMappingURL=general.css.map */

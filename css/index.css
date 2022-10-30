@@ -1,0 +1,205 @@
+h1 {
+  margin-bottom: 0;
+}
+
+.s-abonner > div {
+  background: #f2eee5;
+  padding: 30px;
+  text-align: center;
+}
+.s-abonner .sib-form {
+  font-family: "Montserrat";
+  padding: 32px 0;
+}
+.s-abonner .sib-form div #error-message {
+  font-size: 16px;
+  text-align: left;
+  color: #661d1d;
+  background-color: #ffeded;
+  border-radius: 3px;
+  border-color: #ff4949;
+  margin: 25px auto;
+}
+.s-abonner .sib-form div #success-message {
+  font-size: 16px;
+  text-align: left;
+  color: #085229;
+  background-color: #e7faf0;
+  border-radius: 3px;
+  border-color: #13ce66;
+  margin: 25px auto;
+}
+.s-abonner .sib-form div div#sib-container {
+  max-width: initial;
+  border: none;
+  background: none;
+}
+.s-abonner .sib-form div div#sib-container form {
+  display: flex;
+  justify-content: space-between;
+}
+.s-abonner .sib-form div div#sib-container .sib-input {
+  width: 240px;
+  margin: auto;
+  margin-top: 15px;
+}
+.s-abonner .sib-form div div#sib-container .entry__label {
+  margin: 0;
+  font-weight: 400;
+}
+.s-abonner .sib-form div div#sib-container .entry__label i {
+  margin-right: 5px;
+}
+.s-abonner .sib-form div div#sib-container .entry__field {
+  border: none;
+  border-bottom: 1px solid #666;
+  border-radius: 0;
+  background: none;
+  height: auto;
+}
+.s-abonner .sib-form div div#sib-container .entry__field input {
+  height: auto;
+}
+.s-abonner .sib-form div:nth-child(4) .sib-form-block {
+  margin: auto;
+  margin-top: 15px;
+  width: 240px;
+}
+.s-abonner .sib-form div:nth-child(4) .sib-form-block .sib-form-block__button {
+  width: 130px;
+  height: auto;
+  padding: 14px 23px;
+  color: #1559ed;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 16px;
+  line-height: 1.4285;
+  cursor: pointer;
+  border: 2px solid #1559ed;
+  border-radius: 25px;
+  font-weight: 400;
+}
+.s-abonner .sib-form div:nth-child(4) .sib-form-block .sib-form-block__button svg {
+  position: absolute;
+}
+.s-abonner .sib-form div:nth-child(4) .sib-form-block .sib-form-block__button:hover {
+  background-color: #1559ed;
+  color: #fff;
+}
+
+/* Contact */
+.ext-contact-box {
+  height: 300px;
+  background: #99865a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.int-contact-box {
+  height: 75%;
+  width: 85%;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.int-contact-box * {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.int-contact-box a {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
+
+/* Media queries */
+@media screen and (max-width: 520px) {
+  .int-contact-box h2 {
+    font-size: 7.5vw;
+  }
+  .int-contact-box p {
+    font-size: 4vw;
+  }
+}
+@media screen and (max-width: 1030px) {
+  .s-abonner form {
+    flex-direction: column;
+    width: 100%;
+  }
+  .s-abonner form div div#sib-container .sib-form-block {
+    width: 240px;
+  }
+}
+@media screen and (min-width: 1031px) {
+  .s-abonner .sib-form div:nth-child(4) .sib-form-block {
+    width: max-content;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body .s-abonner > div {
+    background: #6a6966;
+  }
+  body .s-abonner > div p {
+    color: white;
+  }
+  body .s-abonner > div .sib-form div div#sib-container .sib-input {
+    color: white;
+  }
+  body .s-abonner > div .sib-form div div#sib-container .sib-input .entry__field {
+    border-bottom: 1px solid white;
+  }
+  body .s-abonner > div .sib-form div div#sib-container div:nth-child(4) .sib-form-block .sib-form-block__button {
+    border: 2px solid #222;
+    color: white;
+  }
+  body .s-abonner > div .sib-form div div#sib-container div:nth-child(4) .sib-form-block .sib-form-block__button:hover {
+    background: #222;
+  }
+}
+.dark .s-abonner > div {
+  background: #6a6966;
+}
+.dark .s-abonner > div p {
+  color: white;
+}
+.dark .s-abonner > div .sib-form div div#sib-container .sib-input {
+  color: white;
+}
+.dark .s-abonner > div .sib-form div div#sib-container .sib-input .entry__field {
+  border-bottom: 1px solid white;
+}
+.dark .s-abonner > div .sib-form div div#sib-container div:nth-child(4) .sib-form-block .sib-form-block__button {
+  border: 2px solid #222;
+  color: white;
+}
+.dark .s-abonner > div .sib-form div div#sib-container div:nth-child(4) .sib-form-block .sib-form-block__button:hover {
+  background: #222;
+}
+
+.light .s-abonner > div {
+  background: #f2eee5;
+}
+.light .s-abonner > div p {
+  color: initial;
+}
+.light .s-abonner > div .sib-form div div#sib-container .sib-input {
+  color: initial;
+}
+.light .s-abonner > div .sib-form div div#sib-container .sib-input .entry__field {
+  border-bottom: 1px solid #666;
+}
+.light .s-abonner > div .sib-form div div#sib-container div:nth-child(4) .sib-form-block .sib-form-block__button {
+  border: 2px solid #1559ed;
+  color: #1559ed;
+}
+.light .s-abonner > div .sib-form div div#sib-container div:nth-child(4) .sib-form-block .sib-form-block__button:hover {
+  background: #1559ed;
+  color: #fff;
+}
+
+/*# sourceMappingURL=index.css.map */
