@@ -8,7 +8,7 @@
       <div class="card" v-for="(post, index) in posts" :key="post.slug + '_' + index">
         <!-- <a :href="'/fr/articles/' + post.slug"> -->
         <nuxt-link :to="{ name: 'fr-articles-slug', params: { slug: post.slug } }">
-          <div class="img" :src="post.featured_image"></div>
+          <img class="img article-thumbnail" :src="post.featured_image" />
 
           <div class="text-box">
             <h2 class="title">{{ post.title }}</h2>
@@ -74,4 +74,10 @@ export default {
 <style>
 @import url(../../css/tous-les-articles.css);
 @import url(../../css/components/cards.css);
+</style>
+
+<style scoped>
+.article-thumbnail {
+  object-fit: contain;
+}
 </style>
