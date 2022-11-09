@@ -1,5 +1,5 @@
 <template>
-  <div class=".root-container">
+  <div class=".root-container" v-if="Object.entries(post,data).length">
     <HeaderFR />
 
     <div class="article-image" :src="post.data.featured_image">
@@ -15,8 +15,7 @@
             {{ post.data.author.last_name }}
           </span>
           <span class="dot">&#8729;</span>
-          <span class="date"
-            ><i class="fa-solid fa-calendar-days"></i>
+          <span class="date"><i class="fa-solid fa-calendar-days"></i>
             <span class="date-numbers">{{ post.data.published }}</span>
           </span>
         </div>
@@ -28,10 +27,6 @@
     <FooterFR />
   </div>
 </template>
-
-<style>
-@import url(../../../css/components/article.css);
-</style>
 
 <script>
 import { butter } from "~/plugins/buttercms";
@@ -48,16 +43,20 @@ export default {
     };
   },
   methods: {
-    getPost() {
-      butter.post
-        .retrieve(this.$route.params.slug)
-        .then((res) => {
-          console.log(res.data);
-          this.post = res.data;
-        })
-        .catch((res) => {
-          console.log(res);
-        });
+    async getPost() {
+      try {
+        const response = await butter.post.retrieve(this.$route.params.slug)
+        this.post = response.data
+      } catch (error) {
+        console.error(error)
+      }
+      // .then((res) => {
+      //   console.log(res.data);
+      //   this.post = res.data;
+      // })
+      // .catch((res) => {
+      //   console.log(res);
+      // });
     },
   },
   watch: {
@@ -65,8 +64,221 @@ export default {
       this.getPost();
     },
   },
-  created() {
-    this.getPost();
+  async fetch() {
+    await this.getPost();
   },
 };
 </script>
+
+<style scoped>
+@charset "UTF-8";
+
+.article-image {
+  height: calc(100vh - 118px);
+  min-height: 270px;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+  margin-top: 118px;
+}
+
+.article-image p {
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+}
+
+.article-image .article-infos {
+  height: calc(100vh - 118px);
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.article-image .article-description {
+  text-align: center !important;
+  padding: 0 40px;
+}
+
+.article-image .article-description+div {
+  padding: 0 15px;
+}
+
+.article-image .article-description+div .author,
+.article-image .article-description+div .date {
+  font-family: "Nunito Sans";
+  display: inline-block;
+}
+
+.article-image h1 {
+  color: white;
+  margin: 0px;
+  font-size: 6vw;
+  padding: 0 40px;
+}
+
+.article-body {
+  text-align: justify;
+  font-style: normal;
+  width: 80%;
+  margin: 60px auto;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.article-body .article-intro {
+  width: 80%;
+  margin: 60px auto;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 18px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.article-body .article-outro {
+  font-family: "Cormorant Garamond";
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 35px;
+  font-style: italic;
+}
+
+.article-body .lsv-title {
+  margin: 50px auto;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.article-body h2 {
+  text-decoration: underline;
+  font-weight: 500;
+  margin: 45px 0px 0px 0px;
+}
+
+.article-body h3 {
+  text-decoration: underline;
+  margin-bottom: 0;
+}
+
+.article-body p {
+  line-height: 25px;
+}
+
+.article-body p b,
+.article-body p strong {
+  font-weight: 600;
+}
+
+.article-body li {
+  list-style-type: "–   ";
+  margin-top: 8px;
+}
+
+.article-body li:nth-child(1) {
+  margin-top: 0;
+}
+
+.article-body tr td {
+  border: none;
+}
+
+.article-body h3+p {
+  margin-top: 0;
+}
+
+.article-body a {
+  color: #1559ed;
+}
+
+.article-body a:hover {
+  text-decoration: underline;
+}
+
+.article-body figure.image {
+  width: fit-content;
+  margin: 30px auto;
+}
+
+.article-body hr {
+  border: 0.1px solid gray;
+}
+
+.article-body figcaption {
+  color: gray;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .article-image {
+    height: 100vh;
+    margin-top: 0px;
+  }
+
+  .article-image .article-infos {
+    height: 100vh;
+  }
+
+  .article-image .article-intro p {
+    font-size: 2.5vw;
+  }
+
+  h2 {
+    font-size: 5vw;
+  }
+}
+
+@media screen and (max-width: 305px) {
+  .dot {
+    opacity: 0;
+  }
+
+  .article-infos .author,
+  .article-infos .date {
+    margin: 5px 0;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .dot {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body .article-body .article-intro p,
+  body .article-body p,
+  body .article-body h2,
+  body .article-body h3,
+  body .article-body li {
+    color: white;
+  }
+}
+
+.dark .article-body .article-intro p,
+.dark .article-body p,
+.dark .article-body h2,
+.dark .article-body h3,
+.dark .article-body li {
+  color: white;
+}
+
+.light .article-body h2,
+.light .article-body h3,
+.light .article-body li {
+  color: initial;
+}
+
+.light .article-body .article-intro p,
+.light .article-body p {
+  color: initial;
+}
+
+/*# sourceMappingURL=article.css.map */
+/* @import url(../../../css/components/article.css); */
+</style>

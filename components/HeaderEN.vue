@@ -120,9 +120,9 @@ export default {
     loadDesktopMenuScript.setAttribute("src", "../../script/desktop-menu.js");
     document.head.appendChild(loadDesktopMenuScript);
 
-    const loadActualPageScript = document.createElement("script");
-    loadActualPageScript.setAttribute("src", "../../script/actual-page.js");
-    document.head.appendChild(loadActualPageScript);
+    // const loadActualPageScript = document.createElement("script");
+    // loadActualPageScript.setAttribute("src", "../../script/actual-page.js");
+    // document.head.appendChild(loadActualPageScript);
 
     const loadMobileMenuScript = document.createElement("script");
     loadMobileMenuScript.setAttribute("src", "../../script/mobile-menu.js");

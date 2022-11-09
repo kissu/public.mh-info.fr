@@ -1,31 +1,36 @@
 <template>
   <div class="root-container-menuFR">
-    <header class="desktop-menu" @click="onBeforeUnLoad">
+    <header class="desktop-menu">
       <nav>
-        <a href="/fr/" class="accueil inactive">Accueil</a>
-        <a
+        <!-- <a href="/fr/" class="accueil inactive">Accueil</a> -->
+        <!-- <a
           href="/fr/tous-les-articles/"
           class="tous-les-articles"
           id="inactive"
         >
           Tous les articles
-        </a>
-        <a href="/fr/sciences/" class="sciences inactive">Sciences</a>
-        <a href="/fr/actualites/" class="actualites inactive"> Actualités </a>
-        <a href="/fr/histoire/" class="histoire inactive">Histoire</a>
-        <a href="/fr/livres/" class="livres" id="inactive">Livres</a>
-        <a href="/fr/le-saviez-vous/" class="le-saviez-vous inactive">
+        </a> -->
+        <nuxt-link :to="{ name: 'fr' }">Accueil</nuxt-link>
+        <nuxt-link :to="{ name: 'fr-tous-les-articles' }">Tous les articles</nuxt-link>
+        <nuxt-link :to="{ name: 'fr-sciences' }">Sciences</nuxt-link>
+        <!-- <a href="/fr/sciences/" class="sciences inactive">Sciences</a> -->
+        <!-- <a href="/fr/actualites/" class="actualites inactive"> Actualités </a> -->
+        <!-- <a href="/fr/histoire/" class="histoire inactive">Histoire</a> -->
+        <!-- <a href="/fr/livres/" class="livres" id="inactive">Livres</a> -->
+        <!-- <a href="/fr/le-saviez-vous/" class="le-saviez-vous inactive">
           Le saviez-vous ?
-        </a>
-        <a href="/fr/archives/" class="archives inactive">Archives</a>
+        </a> -->
+        <!-- <a href="/fr/archives/" class="archives inactive">Archives</a> -->
         <a href="/fr/#s-abonner">S'abonner</a>
         <a href="/fr/#contact">Contact</a>
-        <a href="/en/"> <i class="fa-solid fa-language"></i> English </a>
+        <!-- <a href="/en/"> <i class="fa-solid fa-language"></i> English </a> -->
+        <nuxt-link :to="{ name: 'en' }"><i class="fa-solid fa-language"></i> English</nuxt-link>
+
         <i class="fa-solid fa-circle-half-stroke mode" @click="modeOnClick"></i>
       </nav>
     </header>
 
-    <header class="mobile-menu">
+    <!-- <header class="mobile-menu">
       <nav>
         <i class="fa-solid fa-bars menu-icon" onclick="liensDisplayFlex()"></i>
 
@@ -85,7 +90,7 @@
           ></i>
         </div>
       </nav>
-    </header>
+    </header> -->
   </div>
 </template>
 
@@ -135,36 +140,36 @@ export default {
       Vue.prototype.$currentTheme = localStorage.getItem("theme");
     },
 
-    onBeforeUnLoad() {
-      window.onbeforeunload = function () {
-        localStorage.setItem("theme", currentTheme);
-      };
-    },
+    // onBeforeUnLoad() {
+    //   window.onbeforeunload = function () {
+    //     localStorage.setItem("theme", currentTheme);
+    //   };
+    // },
   },
   mounted() {
-    const loadCreateScript = document.createElement("script");
-    loadCreateScript.setAttribute("src", "../../script/create-script.js");
-    document.head.appendChild(loadCreateScript);
+    // const loadCreateScript = document.createElement("script");
+    // loadCreateScript.setAttribute("src", "../../script/create-script.js");
+    // document.head.appendChild(loadCreateScript);
 
-    const loadFooterScript = document.createElement("script");
-    loadFooterScript.setAttribute("src", "../../script/footer.js");
-    document.head.appendChild(loadFooterScript);
+    // const loadFooterScript = document.createElement("script");
+    // loadFooterScript.setAttribute("src", "../../script/footer.js");
+    // document.head.appendChild(loadFooterScript);
 
-    const loadDarkModeScript = document.createElement("script");
-    loadDarkModeScript.setAttribute("src", "../../script/dark-mode.js");
-    document.head.appendChild(loadDarkModeScript);
+    // const loadDarkModeScript = document.createElement("script");
+    // loadDarkModeScript.setAttribute("src", "../../script/dark-mode.js");
+    // document.head.appendChild(loadDarkModeScript);
 
-    const loadDesktopMenuScript = document.createElement("script");
-    loadDesktopMenuScript.setAttribute("src", "../../script/desktop-menu.js");
-    document.head.appendChild(loadDesktopMenuScript);
+    // const loadDesktopMenuScript = document.createElement("script");
+    // loadDesktopMenuScript.setAttribute("src", "../../script/desktop-menu.js");
+    // document.head.appendChild(loadDesktopMenuScript);
 
-    const loadActualPageScript = document.createElement("script");
-    loadActualPageScript.setAttribute("src", "../../script/actual-page.js");
-    document.head.appendChild(loadActualPageScript);
+    // const loadActualPageScript = document.createElement("script");
+    // loadActualPageScript.setAttribute("src", "../../script/actual-page.js");
+    // document.head.appendChild(loadActualPageScript);
 
-    const loadMobileMenuScript = document.createElement("script");
-    loadMobileMenuScript.setAttribute("src", "../../script/mobile-menu.js");
-    document.head.appendChild(loadMobileMenuScript);
+    // const loadMobileMenuScript = document.createElement("script");
+    // loadMobileMenuScript.setAttribute("src", "../../script/mobile-menu.js");
+    // document.head.appendChild(loadMobileMenuScript);
   },
 };
 </script>
